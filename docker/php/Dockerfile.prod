@@ -11,8 +11,6 @@ RUN apt update \
     && docker-php-ext-enable apcu \
     && docker-php-ext-configure zip \
     && docker-php-ext-install zip \
-    && pecl install mongodb-${MONGODB_VERSION} \
-    && docker-php-ext-enable mongodb \
     && pecl clear-cache \
     && docker-php-ext-enable opcache;
 

@@ -5,6 +5,7 @@
 !/app/bin/
 !/app/composer.*
 !/app/config/
+!/app/migrations/
 !/app/package*.json
 !/app/public/
 !/app/src/

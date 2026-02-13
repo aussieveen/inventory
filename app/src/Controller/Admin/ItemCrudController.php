@@ -2,7 +2,6 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Category;
 use App\Entity\Item;
 use App\Repository\CategoryRepository;
 use App\Service\ImageUploader;
@@ -19,15 +18,16 @@ use Generator;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
+/** @SuppressWarnings(PHPMD.CouplingBetweenObjects) */
 class ItemCrudController extends AbstractCrudController
 {
     public function __construct(
         private readonly CategoryRepository $categoryRepository,
-        private readonly ImageUploader      $imageUploader,
+        private readonly ImageUploader $imageUploader,
         #[Autowire('%s3.bucket.name%')]
-        private string                      $s3BucketName,
+        private readonly string $s3BucketName,
         #[Autowire('%s3.bucket.region%')]
-        private string                      $s3Region,
+        private readonly string $s3Region,
     ) {
     }
 

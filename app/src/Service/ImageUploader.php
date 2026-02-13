@@ -11,8 +11,8 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 readonly class ImageUploader
 {
     public function __construct(
-        private FilesystemOperator $s3Storage)
-    {
+        private FilesystemOperator $s3Storage
+    ) {
     }
 
     /**

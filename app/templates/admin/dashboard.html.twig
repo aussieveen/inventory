@@ -26,9 +26,7 @@
                                                     <h5>{{ container.code }}</h5>
                                                 </div>
                                                 <div class="card-body">
-                                                    <ul class="list-group">
-                                                        {% include 'admin/item_list.html.twig' with {'items': container.item} %}
-                                                    </ul>
+                                                    {% include 'admin/item_list.html.twig' with {'items': container.item} %}
                                                 </div>
                                             </div>
                                         </div>

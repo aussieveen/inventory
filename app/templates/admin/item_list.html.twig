@@ -1,10 +1,32 @@
-<ul class="list-group mb-3">
-    {% for item in items %}
-            <li class="list-group-item">
+<table class="table table-sm table-hover align-middle mb-3">
+    <thead class="table-light">
+        <tr>
+            <th>Item</th>
+            <th>Category</th>
+            <th class="text-center">Qty</th>
+            <th class="text-end">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+            <tr>
+                <td>
+                    <strong>{{ item.description }}</strong>
+                    {% if item.code %}<br><small class="text-muted">{{ item.code }}</small>{% endif %}
+                </td>
+                <td>
                     {% if item.category.parent is not null %}
-                            {{ item.category.parent.name }} -
+                        <small class="text-muted">{{ item.category.parent.name }} &rsaquo;</small><br>
                     {% endif %}
-                    {{ item.category.name }} - {{ item.description }}
-            </li>
-    {% endfor %}
-</ul>
+                    {{ item.category.name }}
+                </td>
+                <td class="text-center">
+                    <span class="badge bg-secondary">{{ item.quantity }}</span>
+                </td>
+                <td class="text-end text-nowrap">
+                    &pound;{{ item.price|number_format(2) }}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

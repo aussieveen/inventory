@@ -1,0 +1,34 @@
+version: 2
+updates:
+  - package-ecosystem: "composer"
+    directory: "/app"
+    schedule:
+      interval: "cron"
+      cron: "*/15 * * * *"
+    allow:
+      - dependency-name: "*/*"
+    ignore:
+      - dependency-name: "symfony/*"
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-major"
+      - dependency-name: "doctrine/*"
+        update-types:
+          - "version-update:semver-major"
+      - dependency-name: "easycorp/*"
+        update-types:
+          - "version-update:semver-major"
+      - dependency-name: "league/*"
+        update-types:
+          - "version-update:semver-major"
+    groups:
+      symfony:
+        patterns:
+          - "symfony/*"
+      doctrine:
+        patterns:
+          - "doctrine/*"
+      other:
+        patterns:
+          - "easycorp/*"
+          - "league/*"

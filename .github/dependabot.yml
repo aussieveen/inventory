@@ -4,7 +4,7 @@ updates:
     directory: "/app"
     schedule:
       interval: "cron"
-      cron: "*/15 * * * *"
+      cronjob: "*/15 * * * *"
     allow:
       - dependency-name: "*/*"
     ignore:

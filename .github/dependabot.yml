@@ -1,4 +1,10 @@
 version: 2
+registries:
+  github-private:
+    type: git
+    url: https://github.com
+    username: x-access-token
+    password: ${{secrets.COMPOSER_AUTH}}
 updates:
   - package-ecosystem: "composer"
     directory: "/app"

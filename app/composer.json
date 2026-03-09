@@ -3,6 +3,12 @@
     "license": "proprietary",
     "minimum-stability": "stable",
     "prefer-stable": true,
+    "repositories": {
+        "immediate-media/profile-api-integration-bundle": {
+            "type": "vcs",
+            "url": "https://github.com/immediatemediaco/profile-api-integration-bundle.git"
+        }
+    },
     "require": {
         "php": ">=8.2",
         "ext-ctype": "*",
@@ -11,6 +17,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.7",
         "doctrine/orm": "^3.5.7",
         "easycorp/easyadmin-bundle": "^4.27.4",
+        "immediate-media/profile-api-integration-bundle": "^1.0",
         "league/flysystem-aws-s3-v3": "^3.30.1",
         "league/flysystem-bundle": "^3.6",
         "symfony/console": "^7.3.6",

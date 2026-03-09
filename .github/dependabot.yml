@@ -11,6 +11,8 @@ updates:
     schedule:
       interval: "cron"
       cronjob: "35 11 * * *"
+    registries:
+      - github-private
     allow:
       - dependency-name: "*/*"
     ignore:

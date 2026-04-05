@@ -1,33 +1,33 @@
 {
     "type": "project",
     "license": "proprietary",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "doctrine/doctrine-bundle": "^2.18.1",
-        "doctrine/doctrine-migrations-bundle": "^3.7",
-        "doctrine/orm": "^3.5.7",
-        "easycorp/easyadmin-bundle": "^4.27.4",
-        "league/flysystem-aws-s3-v3": "^3.30.1",
-        "league/flysystem-bundle": "^3.6",
-        "symfony/console": "^7.3.6",
-        "symfony/dotenv": "^7.3.2",
+        "doctrine/doctrine-bundle": "^3.2.2",
+        "doctrine/doctrine-migrations-bundle": "^4.0.0",
+        "doctrine/orm": "^3.6.3",
+        "easycorp/easyadmin-bundle": "^5.0.4",
+        "league/flysystem-aws-s3-v3": "^3.32.0",
+        "league/flysystem-bundle": "^3.6.2",
+        "symfony/console": "^8.0.8",
+        "symfony/dotenv": "^8.0.8",
         "symfony/flex": "^2.10.0",
-        "symfony/framework-bundle": "^7.3.6",
-        "symfony/runtime": "^7.3.4",
-        "symfony/yaml": "^7.3.5"
+        "symfony/framework-bundle": "^8.0.8",
+        "symfony/runtime": "^8.0.8",
+        "symfony/yaml": "^8.0.8"
     },
     "require-dev": {
         "mockery/mockery": "^1.6.12",
-        "overtrue/phplint": "^9.6.2",
-        "phpmd/phpmd": "^2.15.0",
-        "phpunit/phpunit": "^10.5.58",
+        "overtrue/phplint": "^9.7.1",
+        "phpmd/phpmd": "^3.x-dev",
+        "phpunit/phpunit": "^10.5.63",
         "squizlabs/php_codesniffer": ">=4.0.1",
-        "symfony/maker-bundle": "^1.64",
-        "symfony/var-dumper": "^7.3.5"
+        "symfony/maker-bundle": "^1.67",
+        "symfony/var-dumper": "^8.0.8"
     },
     "config": {
         "allow-plugins": {
@@ -71,7 +71,7 @@
         ],
         "run-tests": "composer run-phpcs && composer run-phpunit && composer run-phpmd && composer run-phplint",
         "run-phpcs": "vendor/bin/phpcs",
-        "run-phpmd": "vendor/bin/phpmd src text phpmd-src.xml --exclude src/Migrations/ && vendor/bin/phpmd tests text phpmd-tests.xml",
+        "run-phpmd": "vendor/bin/phpmd analyze src --format text --ruleset phpmd-src.xml --exclude 'src/Migrations/' && vendor/bin/phpmd analyze tests --format text --ruleset phpmd-tests.xml",
         "run-phplint": "vendor/bin/phplint",
         "run-phpunit": "vendor/bin/phpunit",
         "run-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-filter src/ --coverage-html coverage"
@@ -82,7 +82,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "^7.0"
+            "require": "^8.0"
         }
     }
 }

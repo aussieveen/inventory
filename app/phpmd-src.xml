@@ -36,7 +36,6 @@
     <rule ref="rulesets/naming.xml">
         <!--Fails for $id-->
         <exclude name="ShortVariable" />
-        <exclude name="LongVariable" />
     </rule>
 
     <rule ref="rulesets/naming.xml/LongVariable">

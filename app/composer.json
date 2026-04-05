@@ -71,7 +71,7 @@
         ],
         "run-tests": "composer run-phpcs && composer run-phpunit && composer run-phpmd && composer run-phplint",
         "run-phpcs": "vendor/bin/phpcs",
-        "run-phpmd": "vendor/bin/phpmd src text phpmd-src.xml --exclude src/Migrations/ && vendor/bin/phpmd tests text phpmd-tests.xml",
+        "run-phpmd": "vendor/bin/phpmd analyze src --format text --ruleset phpmd-src.xml --exclude 'src/Migrations/' && vendor/bin/phpmd analyze tests --format text --ruleset phpmd-tests.xml",
         "run-phplint": "vendor/bin/phplint",
         "run-phpunit": "vendor/bin/phpunit",
         "run-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-filter src/ --coverage-html coverage"
